@@ -1,6 +1,6 @@
 body {
   background: #fafafa;
-  color: #125688;
+  color: $secondary-color;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -52,5 +52,5 @@ body {
 }
 
 .signup-form .btn.btn-signup {
-  background-color: #125688;
+  background-color: $secondary-color;
 }

@@ -1,0 +1,34 @@
+{
+  "name": "bakagram",
+  "version": "0.1.0",
+  "description": "A Instagram for Bakas",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arthaclarius/Platzigram.git"
+  },
+  "keywords": [
+    "platzi",
+    "javascript",
+    "baka",
+    "touhou"
+  ],
+  "author": "arthaclarius <sgcg5@hotmail.com> (https://twitter.com/Arthaclarius)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Arthaclarius/Platzigram/issues"
+  },
+  "homepage": "https://github.com/Arthaclarius/Platzigram#readme",
+  "dependencies": {
+    "express": "^4.15.5",
+    "materialize-css": "^0.100.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0"
+  }
+}
