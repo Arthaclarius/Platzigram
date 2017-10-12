@@ -2,9 +2,23 @@ const
 express = require('express'),
 app     = express()
 
+//Asignar el render de pug
+app.set('view engine', 'pug')
+
+//Asignar ruta de archivos estáticos
+app.use(express.static(__dirname + '/public'))
+
 //Routing
 app.get('/', function(req, res){
-  res.send('Za Warudo!')
+  res.render('index')
+})
+
+app.get('/signup', function(req, res){
+  res.render('index')
+})
+
+app.get('/signin', function(req, res){
+  res.render('index')
 })
 
 //Server Init
