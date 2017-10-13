@@ -10,11 +10,11 @@ app.use(express.static(__dirname + '/public'))
 
 //Routing
 app.get('/', function(req, res){
-  res.render('index')
+  res.render('index', {title: 'Baka'})
 })
 
 app.get('/signup', function(req, res){
-  res.render('index')
+  res.render('index', {title:'Baka-in'})
 })
 
 app.get('/signin', function(req, res){

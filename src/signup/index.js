@@ -1,4 +1,5 @@
 const yo = require('yo-yo');
+import translate from './translate'
 
 export default yo`
 <div class="container">
@@ -14,6 +15,7 @@ export default yo`
               <h1 class="platzigram">Bakagram</h1>
               <form action="" class="signup-form">
                 <h2>Registrate para ver fotos de cirno</h2>
+                <p style="float: right">News: ${translate.date.format(new Date())} ${translate.translate('FROM')} ${translate.date(new Date(1997, 9, 9))}</p>
                 <div class="section">
                   <a href="" class="btn btn-fb hiden-on-small-only">
                     Iniciar sesion con Facebook
