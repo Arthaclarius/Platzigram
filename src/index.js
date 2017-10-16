@@ -5,7 +5,7 @@ import yo from 'yo-yo'
 import empty from 'empty-element'
 
 const routes = [
-  { url: '/signup', html : signup },
+  { url: '/signup', html : signup() },
   { url: '/', html: yo`<a href="./signup">Signup</a>`}
 ]
 

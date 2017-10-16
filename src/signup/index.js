@@ -1,7 +1,16 @@
 const yo = require('yo-yo');
-import translate from './translate'
+import translate from '../translate'
 
-export default yo`
+
+export default function(){
+  var slang = 'es'
+  var lang = new translate(slang)  
+  var pics = 0
+  var el
+
+  //#region Functions
+  function render() {
+    return yo`
 <div class="container">
   <div class="row">
     <div class="col s10 push-s1">
@@ -14,8 +23,14 @@ export default yo`
             <div class="signup-box">
               <h1 class="platzigram">Bakagram</h1>
               <form action="" class="signup-form">
-                <h2>Registrate para ver fotos de cirno</h2>
-                <p style="float: right">News: ${translate.date.format(new Date())} ${translate.translate('FROM')} ${translate.date(new Date(1997, 9, 9))}</p>
+                <h2>${lang.translate('SIGIN_MESSAGE')}</h2>
+                <button class="btn" onclick=${addPicture}>
+                  ${lang.translate('ADD_PICTURE')}
+                </button>
+                <button class="btn" onclick=${switchLang}>
+                  English/Español
+                </button>
+                <p style="float: right">${lang.translate('PICTURES', { num: pics })} ${lang.translate('FROM')}  ${lang.date(new Date())} - ${lang.date(new Date(1997, 9, 9))}</p>
                 <div class="section">
                   <a href="" class="btn btn-fb hiden-on-small-only">
                     Iniciar sesion con Facebook
@@ -46,3 +61,29 @@ export default yo`
   </div>
 </div>
 `
+  }
+
+  function addPicture() {
+    pics++
+    var newEl = render()
+    yo.update(el, newEl)
+    return false
+  }
+
+  function switchLang(){
+    if(slang == 'es') {
+      slang = 'en'
+      lang = new translate(slang)
+    } else {
+      slang = 'es'
+      lang = new translate(slang)
+    }
+
+    var newEl = render()
+    yo.update(el, newEl)
+    return false
+  }
+
+  el = render()
+  return el
+}

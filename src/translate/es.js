@@ -1,7 +1,13 @@
 export default {
-    FROM: 'Desde',
-    PICTURES: '{num, plural}' +
+    SIGIN_MESSAGE: 'Registrate para ver fotos de Cirno',
+
+
+    FROM: 'desde',
+
+
+    PICTURES: '{num, plural, ' +
     '=0 {ninguna foto}' +
     '=1 {una foto}' +
-    'other { # fotos }'
+    'other { # fotos }}',
+    ADD_PICTURE: 'Añadir imagen'
 }

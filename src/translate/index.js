@@ -13,20 +13,24 @@ if (!window.Intl) {
     require('intl/locale-data/jsonp/es.js');
 }
 
-import es from 'es'
-import en from 'en'
+import es from './es'
+import en from './en'
 
 var MESSAGES = {}
 MESSAGES.es = es
 MESSAGES.en = en
-
 export default class Translate{
-    locale = 'es'
+    constructor(defaultlocale = 'es'){
+        this.locale = defaultlocale
+    }
 
     translate(message, options = {}) {
-        var msg = new IntlMessageFormat(MESSAGES[locale][message], locale, null)
+        var msg = new IntlMessageFormat(MESSAGES[this.locale][message], this.locale, null)
         return msg.format(options)
     }
 
-    date = new IntlRelativeFormat(locale)
+    date(date = new Date()) {
+        var msg = new IntlRelativeFormat(this.locale)
+        return msg.format(date)
+    }
 }

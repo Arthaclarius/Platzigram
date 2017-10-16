@@ -39,7 +39,7 @@ gulp.task('assets', function () {
 })
 
 /* Scripts */
-/*
+
 gulp.task('scripts', function(){
   //Cargar browserify en el index
   browserify('./src/index.js')
@@ -54,7 +54,7 @@ gulp.task('scripts', function(){
   //Generarlo en public
   .pipe(gulp.dest('public/src'))
 })
-*/
+
 
 
 
@@ -96,4 +96,4 @@ gulp.task('watch', function () {
 })
 
 //Indicamos las tareas a procesar
-gulp.task('default', ['styles', 'assets', 'build'])
+gulp.task('default', ['styles', 'assets', 'build', 'scripts'])
